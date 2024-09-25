@@ -54,4 +54,14 @@ export class CrudComponent {
 
     this.isVisibledRegisterButton = true;
   }
+
+  handleDeletePerson() {
+    if (this.index < 0) return;
+
+    this.personsData.splice(this.index, 1);
+
+    this.form.reset();
+
+    this.isVisibledRegisterButton = true;
+  }
 }
