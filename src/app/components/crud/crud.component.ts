@@ -47,4 +47,11 @@ export class CrudComponent {
 
     this.isVisibledRegisterButton = false;
   }
+  handleChangeInformation() {
+    this.personsData[this.index] = this.form.value as Person;
+
+    this.form.reset();
+
+    this.isVisibledRegisterButton = true;
+  }
 }
