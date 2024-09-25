@@ -64,4 +64,9 @@ export class CrudComponent {
 
     this.isVisibledRegisterButton = true;
   }
+
+  handleCancel() {
+    this.form.reset();
+    this.isVisibledRegisterButton = true;
+  }
 }
