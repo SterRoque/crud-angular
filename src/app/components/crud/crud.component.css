@@ -5,7 +5,7 @@ form {
 }
 
 input {
-  margin: 0.625rem;
+  margin: 0.625rem auto;
 }
 
 input[type="button"] {

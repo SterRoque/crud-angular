@@ -1,20 +1,59 @@
-<p>{{ form.value.name }}</p>
-<p>{{ form.value.age }}</p>
-<p>{{ form.value.city }}</p>
-
 <form [formGroup]="form">
+  @if (form.get('name').hasError('required') && form.get('name').touched) {
+
+  <p class="alert alert-warning">O campo nome é obrigatório</p>
+
+  } @if (form.get('name').hasError('minlength') && form.get('name').touched) {
+
+  <p class="alert alert-warning">
+    O campo precisa conter pelo menos 3 caracteres
+  </p>
+
+  }
+
   <input
     type="text"
     formControlName="name"
     placeholder="Nome"
     class="form-control"
   />
+
+  @if (form.get('age').hasError('required') && form.get('age').touched) {
+
+  <p class="alert alert-warning">O campo idade é obrigatório</p>
+
+  } @if (form.get('age').hasError('min') && form.get('age').touched) {
+
+  <p class="alert alert-warning">
+    O campo idade não aceito numeros inferiores a 0
+  </p>
+
+  } @if (form.get('age').hasError('max') && form.get('age').touched) {
+
+  <p class="alert alert-warning">
+    O campo idade não aceito numeros superiores a 120
+  </p>
+
+  }
+
   <input
     type="number"
     formControlName="age"
     placeholder="Idade"
     class="form-control"
   />
+
+  @if (form.get('city').hasError('required') && form.get('city').touched) {
+
+  <p class="alert alert-warning">O campo cidade é obrigatório</p>
+
+  } @if (form.get('city').hasError('minlength') && form.get('city').touched) {
+
+  <p class="alert alert-warning">
+    O campo cidade precisa conter pelo menos 3 caracteres
+  </p>
+
+  }
   <input
     type="text"
     formControlName="city"
