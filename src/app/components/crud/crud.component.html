@@ -67,6 +67,7 @@
     value="Cadastrar"
     class="btn btn-primary"
     [disabled]="form.invalid"
+    (click)="handleRegister()"
   />
 
   } @else {
@@ -93,5 +94,13 @@
     </tr>
   </thead>
 
-  <tbody></tbody>
+  <tbody>
+    <tr *ngFor="let person of personsData; index as indice">
+      <td>{{ indice + 1 }}</td>
+      <td>{{ person.name }}</td>
+      <td>{{ person.age }}</td>
+      <td>{{ person.city }}</td>
+      <td><button class="btn btn-primary">Selecionar</button></td>
+    </tr>
+  </tbody>
 </table>

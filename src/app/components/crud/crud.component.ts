@@ -5,11 +5,13 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Person } from '../../models/Person';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-crud',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './crud.component.html',
   styleUrl: './crud.component.css',
 })
@@ -25,4 +27,13 @@ export class CrudComponent {
   });
 
   isVisibledRegisterButton: boolean = true;
+  personsData: Person[] = [];
+
+  handleRegister() {
+    this.personsData.push(this.form.value as Person);
+
+    this.form.reset();
+
+    console.table(this.personsData);
+  }
 }
