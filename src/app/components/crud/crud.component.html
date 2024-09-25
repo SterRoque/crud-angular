@@ -61,12 +61,15 @@
     class="form-control"
   />
 
+  @if(isVisibledRegisterButton) {
   <input
     type="button"
     value="Cadastrar"
     class="btn btn-primary"
     [disabled]="form.invalid"
   />
+
+  } @else {
   <input
     type="button"
     value="Alterar"
@@ -75,6 +78,8 @@
   />
   <input type="button" value="Remover" class="btn btn-primary" />
   <input type="button" value="Cancelar" class="btn btn-primary" />
+
+  }
 </form>
 
 <table class="table">
