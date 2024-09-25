@@ -1,0 +1,14 @@
+form {
+  width: 31.25rem;
+  margin: 1.875rem auto;
+  text-align: center;
+}
+
+input {
+  margin: 0.625rem;
+}
+
+input[type="button"] {
+  margin-left: 0.3125rem;
+  margin-right: 0.3125rem;
+}
