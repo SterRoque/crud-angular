@@ -100,7 +100,11 @@
       <td>{{ person.name }}</td>
       <td>{{ person.age }}</td>
       <td>{{ person.city }}</td>
-      <td><button class="btn btn-primary">Selecionar</button></td>
+      <td>
+        <button class="btn btn-primary" (click)="handleSelectPerson(indice)">
+          Selecionar
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>

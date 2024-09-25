@@ -28,6 +28,7 @@ export class CrudComponent {
 
   isVisibledRegisterButton: boolean = true;
   personsData: Person[] = [];
+  index: number = -1;
 
   handleRegister() {
     this.personsData.push(this.form.value as Person);
@@ -35,5 +36,15 @@ export class CrudComponent {
     this.form.reset();
 
     console.table(this.personsData);
+  }
+  handleSelectPerson(index: number) {
+    this.index = index;
+    this.form.setValue({
+      name: this.personsData[index].name,
+      age: this.personsData[index].age,
+      city: this.personsData[index].city,
+    });
+
+    this.isVisibledRegisterButton = false;
   }
 }
